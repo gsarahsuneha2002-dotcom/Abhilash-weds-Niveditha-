@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhilash & Niveditha</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8f8f8;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 380px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid #222;
+  color: #222;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.countdown {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #444;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>Abhilash & Niveditha</h1>
+  <div class="subtitle">We are getting married</div>
+  <p>09 May 2026 · CSI Christ Church, Gooty</p>
+  <div class="countdown" id="countdown"></div>
+</div>
+
+<div class="section">
+  <h2>Events</h2>
+
+  <div class="card">
+    <h3>Holy Matrimony</h3>
+    <p>09 May 2026 · 10:00 AM</p>
+    <a class="btn" href="https://www.google.com/maps?q=15.145529015710927,77.63270403575864">Map</a>
+  </div>
+
+  <div class="card">
+    <h3>Lunch</h3>
+    <p>09 May 2026 · 1:00 PM</p>
+    <a class="btn" href="https://www.google.com/maps?q=15.10879724606415,77.64651833069313">Map</a>
+  </div>
+
+  <div class="card">
+    <h3>Reception</h3>
+    <p>11 May 2026 · 10:00 AM</p>
+    <a class="btn" href="https://www.google.com/maps?q=14.431902994138465,79.97893151534655">Map</a>
+  </div>
+</div>
+
+<div class="section">
+  <p>“What God has joined together, let no one separate.”</p>
+</div>
+
+<script>
+const weddingDate = new Date("May 9, 2026 10:00:00").getTime();
+setInterval(function() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  document.getElementById("countdown").innerHTML =
+    days + " days " + hours + " hours remaining";
+}, 1000);
+</script>
+
+</body>
+</html>
